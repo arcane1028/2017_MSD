@@ -9,6 +9,7 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
@@ -66,20 +67,42 @@ public class MainActivity extends AppCompatActivity {
         result.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                double lValue, rValue, result = 0;
-                String op;
-                
+                double result = 0;
+                ArrayList<String> arr = new ArrayList<>();
                 Scanner scan = new Scanner(inputValue.getText().toString());
-                lValue = scan.nextDouble();
-                op = scan.next();
-                rValue = scan.nextDouble();
-                result = getCalculate(lValue, op, rValue);
+
+                while (scan.hasNext()) {
+                    arr.add(scan.next());
+                }
+
+                arr = calPriority(arr, '*', '/');
+                if(arr.size()>1)
+                    arr = calPriority(arr, '+', '-');
+
+                result = Double.valueOf(arr.get(0));
 
                 Toast.makeText(getApplicationContext(), String.valueOf(result), Toast.LENGTH_LONG).show();
-
             }
         });
 
+    }
+
+    private ArrayList<String> calPriority(ArrayList<String> arr, char op1, char op2) {
+        String op;
+        double lValue;
+        double rValue;
+
+        for (int i = 0; i < arr.size(); i++) {
+            op = arr.get(i);
+            if (op.charAt(0) == op1 || op.charAt(0) == op2) {
+                lValue = Double.valueOf(arr.remove(i - 1));
+                op = arr.remove(i - 1);
+                rValue = Double.valueOf(arr.remove(i - 1));
+                arr.add(i - 1, String.valueOf(getCalculate(lValue, op, rValue)));
+                i -= 2;
+            }
+        }
+        return arr;
     }
 
     private double getCalculate(double lValue, String op, double rValue) {
