@@ -56,40 +56,25 @@ public class MainActivity extends AppCompatActivity {
         addEvent(plus, " + ");
         addEvent(minus, " - ");
 
-        clear.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        clear.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 inputValue.setText("");
                 inputValue.invalidate();
             }
         });
 
-        result.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        result.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
+                double lValue, rValue, result = 0;
+                String op;
+                
                 Scanner scan = new Scanner(inputValue.getText().toString());
-                int lValue = scan.nextInt();
-                String op = scan.next();
-                int rValue = scan.nextInt();
-                int result=0;
+                lValue = scan.nextDouble();
+                op = scan.next();
+                rValue = scan.nextDouble();
+                result = getCalculate(lValue, op, rValue);
 
-                switch (op.charAt(0)){
-                    case '+':
-                        result=lValue+rValue;
-                        break;
-                    case '-':
-                        result=lValue-rValue;
-                        break;
-                    case '*':
-                        result=lValue*rValue;
-                        break;
-                    case '/':
-                        if(rValue==0){
-                            break;
-                        }
-                        result=lValue/rValue;
-                        break;
-
-                }
                 Toast.makeText(getApplicationContext(), String.valueOf(result), Toast.LENGTH_LONG).show();
 
             }
@@ -97,9 +82,32 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private double getCalculate(double lValue, String op, double rValue) {
+        double result = 0;
+
+        switch (op.charAt(0)) {
+            case '+':
+                result = lValue + rValue;
+                break;
+            case '-':
+                result = lValue - rValue;
+                break;
+            case '*':
+                result = lValue * rValue;
+                break;
+            case '/':
+                if (rValue == 0) {
+                    break;
+                }
+                result = lValue / rValue;
+                break;
+        }
+        return result;
+    }
+
     private void addEvent(Button button, final String addText) {
-        button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 String currentInput = inputValue.getText().toString();
                 StringBuilder cur = new StringBuilder(currentInput);
                 cur.append(addText);
