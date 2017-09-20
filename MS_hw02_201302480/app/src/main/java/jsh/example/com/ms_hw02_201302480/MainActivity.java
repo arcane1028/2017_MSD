@@ -22,17 +22,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         inputValue = (EditText) findViewById(R.id.input);
+        Button number[] = new Button[10];
+        String packName = this.getPackageName();
 
-        Button number0 = (Button) findViewById(R.id.n0);
-        Button number1 = (Button) findViewById(R.id.n1);
-        Button number2 = (Button) findViewById(R.id.n2);
-        Button number3 = (Button) findViewById(R.id.n3);
-        Button number4 = (Button) findViewById(R.id.n4);
-        Button number5 = (Button) findViewById(R.id.n5);
-        Button number6 = (Button) findViewById(R.id.n6);
-        Button number7 = (Button) findViewById(R.id.n7);
-        Button number8 = (Button) findViewById(R.id.n8);
-        Button number9 = (Button) findViewById(R.id.n9);
+        for(int i=0;i<10;i++){
+            number[i] = (Button) findViewById(getResources().getIdentifier("n"+i,"id",packName));
+            addEvent(number[i], String.valueOf(i));
+        }
 
         Button div = (Button) findViewById(R.id.div);
         Button mul = (Button) findViewById(R.id.mul);
@@ -42,16 +38,6 @@ public class MainActivity extends AppCompatActivity {
         Button result = (Button) findViewById(R.id.result);
         Button clear = (Button) findViewById(R.id.clr);
 
-        addEvent(number0, "0");
-        addEvent(number1, "1");
-        addEvent(number2, "2");
-        addEvent(number3, "3");
-        addEvent(number4, "4");
-        addEvent(number5, "5");
-        addEvent(number6, "6");
-        addEvent(number7, "7");
-        addEvent(number8, "8");
-        addEvent(number9, "9");
         addEvent(div, " / ");
         addEvent(mul, " * ");
         addEvent(plus, " + ");
@@ -67,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         result.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                double result = 0;
                 ArrayList<String> arr = new ArrayList<>();
                 Scanner scan = new Scanner(inputValue.getText().toString());
 
@@ -79,9 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if(arr.size()>1)
                     arr = calPriority(arr, '+', '-');
 
-                result = Double.valueOf(arr.get(0));
-
-                Toast.makeText(getApplicationContext(), String.valueOf(result), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), String.valueOf(Double.valueOf(arr.get(0))), Toast.LENGTH_LONG).show();
             }
         });
 
