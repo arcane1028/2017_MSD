@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         Button number[] = new Button[10];
         String packName = this.getPackageName();
 
-        for(int i=0;i<10;i++){
-            number[i] = (Button) findViewById(getResources().getIdentifier("n"+i,"id",packName));
+        for (int i = 0; i < 10; i++) {
+            number[i] = (Button) findViewById(getResources().getIdentifier("n" + i, "id", packName));
             addEvent(number[i], String.valueOf(i));
         }
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 arr = calPriority(arr, '*', '/');
-                if(arr.size()>1)
+                if (arr.size() > 1)
                     arr = calPriority(arr, '+', '-');
 
                 Toast.makeText(getApplicationContext(), String.valueOf(Double.valueOf(arr.get(0))), Toast.LENGTH_LONG).show();
@@ -75,14 +75,16 @@ public class MainActivity extends AppCompatActivity {
         double lValue;
         double rValue;
 
-        for (int i = 0; i < arr.size(); i++) {
+        for (int i = 0; i < arr.size(); ) {
             op = arr.get(i);
             if (op.charAt(0) == op1 || op.charAt(0) == op2) {
-                lValue = Double.valueOf(arr.remove(i - 1));
-                op = arr.remove(i - 1);
-                rValue = Double.valueOf(arr.remove(i - 1));
-                arr.add(i - 1, String.valueOf(getCalculate(lValue, op, rValue)));
-                i -= 2;
+                i -= 1;
+                lValue = Double.valueOf(arr.remove(i));
+                op = arr.remove(i);
+                rValue = Double.valueOf(arr.remove(i));
+                arr.add(i, String.valueOf(getCalculate(lValue, op, rValue)));
+            } else {
+                i++;
             }
         }
         return arr;
