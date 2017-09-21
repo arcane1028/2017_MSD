@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         Button mul = (Button) findViewById(R.id.mul);
         Button plus = (Button) findViewById(R.id.plus);
         Button minus = (Button) findViewById(R.id.min);
-
         Button result = (Button) findViewById(R.id.result);
         Button clear = (Button) findViewById(R.id.clr);
 
