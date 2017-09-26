@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
 
-
                 intent.putExtra("ID", inputID.getText().toString());
                 intent.putExtra("PASSWORD", inputPassword.getText().toString());
 

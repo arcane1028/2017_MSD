@@ -29,7 +29,6 @@ public class MenuActivity extends AppCompatActivity {
 
     private void addEvent(Button button, final String msg) {
         button.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
