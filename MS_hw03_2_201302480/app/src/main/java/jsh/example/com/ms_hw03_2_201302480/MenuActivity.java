@@ -28,7 +28,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void addEvent(Button button, final String msg) {
-        button.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -41,10 +41,10 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void processIntent(Intent intent) {
-        if (intent != null){
+        if (intent != null) {
             Bundle bundle = intent.getExtras();
-            Toast.makeText(getApplicationContext(), "Username : "+ bundle.getString("ID") + " Password : "+bundle.getString("PASSWORD"), Toast.LENGTH_LONG).show();
-
+            Toast.makeText(getApplicationContext(), "Username : " + bundle.getString("ID")
+                    + " Password : " + bundle.getString("PASSWORD"), Toast.LENGTH_LONG).show();
         }
     }
 

@@ -18,7 +18,7 @@
         android:id="@+id/salesMng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="매출관리"
+        android:text="매출 관리"
         android:textSize="24dp" />
     <Button
         android:id="@+id/productMng"

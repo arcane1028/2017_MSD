@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         inputValue = (EditText) findViewById(R.id.input);
+
         resultView = (EditText) findViewById(R.id.resultView);
+
         Button number[] = new Button[10];
         String packName = this.getPackageName();
 
@@ -70,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
                 inputValue.invalidate();
                 resultView.invalidate();
-
-                //Toast.makeText(getApplicationContext(), String.valueOf(Double.valueOf(arr.get(0))), Toast.LENGTH_LONG).show();
             }
         });
 
