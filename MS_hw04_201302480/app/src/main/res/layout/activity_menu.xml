@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jsh.example.com.ms_hw04_201302480.MenuActivity"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택 메뉴"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/locationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="위치 권한"
+        android:textSize="24dp"/>
+    <Button
+        android:id="@+id/cameraButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="카메라 권한"
+        android:textSize="24dp" />
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="달력 권한"
+        android:textSize="24dp"/>
+    <Button
+        android:id="@+id/goToLoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textSize="24dp"/>
+
+</LinearLayout>

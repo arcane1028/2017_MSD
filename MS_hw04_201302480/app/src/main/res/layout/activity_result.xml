@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context="jsh.example.com.ms_hw04_201302480.ResultActivity">
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기본 메뉴"
+        android:textSize="24dp"/>
+
+    <Button
+        android:id="@+id/goToMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메뉴화면"
+        android:textSize="24dp"/>
+
+</LinearLayout>
