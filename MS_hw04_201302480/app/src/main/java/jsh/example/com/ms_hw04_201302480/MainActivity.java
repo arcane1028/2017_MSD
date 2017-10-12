@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 String password = inputPassword.getText().toString();
                 if (id.isEmpty() || password.isEmpty())
                 {
-                    Toast.makeText(MainActivity.this, "ID나 비밀번호가 입력되지 않았습니다.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "ID나 비밀번호가 입력되지 않았습니다.",
+                            Toast.LENGTH_LONG).show();
                     return;
                 }
 

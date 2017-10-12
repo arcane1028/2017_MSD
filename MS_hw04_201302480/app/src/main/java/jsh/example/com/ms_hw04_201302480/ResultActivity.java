@@ -36,6 +36,7 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.putExtra("Permission", permission);
+                intent.putExtra("Message", "임의의 메시지");
                 setResult(check, intent);
                 finish();
             }
@@ -62,7 +63,7 @@ public class ResultActivity extends AppCompatActivity {
                 return "위치";
 
             case 2:
-                return "카몌라";
+                return "카메라";
 
             case 3:
                 return "달력";

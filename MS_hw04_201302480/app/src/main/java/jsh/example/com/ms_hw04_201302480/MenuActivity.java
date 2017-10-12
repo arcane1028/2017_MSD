@@ -20,7 +20,6 @@ public class MenuActivity extends AppCompatActivity {
     Button calendarButton;
     Button goToLoginButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +45,15 @@ public class MenuActivity extends AppCompatActivity {
         addPermissionEvent(calendarButton, Manifest.permission.READ_CALENDAR, 3);
     }
 
-    private void addPermissionEvent(final Button button, final String permission, final int requestCode) {
+    private void addPermissionEvent(final Button button, final String permission,
+                                    final int requestCode) {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int permissionCheck = ContextCompat.checkSelfPermission(MenuActivity.this, permission);
                 if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(getApplicationContext(),  requestCodeToString(requestCode)+" 권한 승인됨", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),
+                            requestCodeToString(requestCode)+" 권한 승인됨", Toast.LENGTH_LONG).show();
                 } else {
                     //아래 if 한번거절하면 true 됨
                     if (ActivityCompat.shouldShowRequestPermissionRationale(MenuActivity.this, permission)) {
@@ -93,9 +94,9 @@ public class MenuActivity extends AppCompatActivity {
                 Bundle bundle = data.getExtras();
                 int permission = bundle.getInt("Permission");
                 Toast.makeText(getApplicationContext(),  requestCodeToString(permission) +
-                        "권한 "+ resultCodeToString(resultCode)+"됨 resultCode : "+resultCode, Toast.LENGTH_LONG).show();
+                        "권한 "+ resultCodeToString(resultCode)+"됨, resultCode : " +resultCode
+                        + ", " + bundle.getString("Message"), Toast.LENGTH_LONG).show();
             }
-
         }
     }
 
@@ -117,7 +118,7 @@ public class MenuActivity extends AppCompatActivity {
                 return "위치";
 
             case 2:
-                return "카몌라";
+                return "카메라";
 
             case 3:
                 return "달력";
