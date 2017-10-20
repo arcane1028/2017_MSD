@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="example.com.jsh.ms_hw06_201302480.MainActivity">
+
+    <item
+        android:id="@+id/goToNaver"
+        android:orderInCategory="201"
+        android:title="네이버"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/goToURL"
+        android:orderInCategory="202"
+        android:title="이동"
+        app:showAsAction="always"
+        />
+</menu>
