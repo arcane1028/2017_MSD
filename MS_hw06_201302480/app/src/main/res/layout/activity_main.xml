@@ -6,12 +6,39 @@
     android:layout_height="match_parent"
     tools:context="example.com.jsh.ms_hw06_201302480.MainActivity">
 
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/inputURL"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:inputType="textUri"/>
+        <Button
+            android:id="@+id/goToNaver"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="네이버"
+            android:textSize="16dp"
+            />
+        <Button
+            android:id="@+id/goToURL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="이동"
+            android:textSize="16dp"
+            />
+
+    </LinearLayout>
+
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-
-        />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchLayout"/>
 
 </RelativeLayout>
