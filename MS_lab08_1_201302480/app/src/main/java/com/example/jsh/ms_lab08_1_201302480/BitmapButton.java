@@ -12,12 +12,12 @@ import android.view.MotionEvent;
  */
 
 public class BitmapButton extends AppCompatButton {
+    public static int STATUS_NORMAL = 0;
+    public static int STATUS_CLICKED = 1;
+
+    int iconStatus = STATUS_NORMAL;
     int iconNormal = R.drawable.bitmap_button_normal;
     int iconClicked = R.drawable.bitmap_button_clicked;
-
-    int iconStatus = STATUS_NOMAL;
-    public static int STATUS_NOMAL = 0;
-    public static int STATUS_CLICKED = 1;
 
     public BitmapButton(Context context) {
         super(context);
@@ -60,7 +60,7 @@ public class BitmapButton extends AppCompatButton {
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 setBackgroundResource(R.drawable.bitmap_button_normal);
-                iconStatus = STATUS_NOMAL;
+                iconStatus = STATUS_NORMAL;
                 break;
         }
 
