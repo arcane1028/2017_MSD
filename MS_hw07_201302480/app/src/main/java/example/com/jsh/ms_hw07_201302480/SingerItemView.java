@@ -17,7 +17,6 @@ public class SingerItemView extends LinearLayout {
     TextView textView3; //전화번호
     ImageView imageView;
 
-
     public SingerItemView(Context context) {
         super(context);
         init(context);
@@ -40,6 +39,4 @@ public class SingerItemView extends LinearLayout {
     public void setBirth(String birth){textView2.setText(birth);}
     public void setPhone(String phone){ textView3.setText(String.valueOf(phone));}
     public void setImage(int resId){imageView.setImageResource(resId);}
-
-
 }

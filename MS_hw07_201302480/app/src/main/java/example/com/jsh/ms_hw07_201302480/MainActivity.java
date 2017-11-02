@@ -12,10 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     ListView listView;
@@ -43,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                adapter.delItem(position);
-
+                                adapter.removeItem(position);
                                 count.setText(adapter.getCount() + " 명");
+                                listView.setAdapter(adapter);
 
                             }
                         }).setNegativeButton("취소",
@@ -57,11 +55,8 @@ public class MainActivity extends AppCompatActivity {
                         });
                 AlertDialog alert = alert_confirm.create();
                 alert.show();
-
-
             }
         });
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
             items.add(item);
         }
 
-        public Object delItem(int position) {
+        public Object removeItem(int position) {
             return items.remove(position);
         }
 
         @Override
-        public Object getItem(int position) {
+        public SingerItem getItem(int position) {
             return items.get(position);
         }
 
@@ -116,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             SingerItem item = items.get(position);
             view.setName(item.getName());
             view.setBirth(item.getBirth());
-            view.setPhone(item.getDate());
+            view.setPhone(item.getPhone());
             view.setImage(item.getResId());
 
             return view;
