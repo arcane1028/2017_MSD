@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="example.com.jsh.ms_hw08_201302480.MainActivity">
+
+    <item
+        android:id="@+id/menu_add"
+        android:orderInCategory="101"
+        android:title="추가"
+        app:showAsAction="always" />
+</menu>
