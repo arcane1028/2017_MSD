@@ -64,7 +64,6 @@ public class PaintBoard extends View {
         while (true) {
             Bitmap prev = (Bitmap) undos.pop();
             if (prev == null) return;
-            ;
 
             prev.recycle();
         }
