@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -15,7 +16,8 @@ public class CustomView extends View {
 
     private Paint paint;
     private Canvas mCanvas;
-    int x = 100, y = 100;
+    float x = 100, y = 100;
+    float positionX = 100, positionY = 100;
 
 
     public CustomView(Context context) {
@@ -27,22 +29,40 @@ public class CustomView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(x, y, 200, 200, paint);
+        canvas.drawRect(positionX - x / 2, positionY - y / 2, positionX + x / 2, positionY + y / 2, paint);
     }
 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
+        /*
+        * switch (event.getAction()) {
+            case MotionEvent.ACTION_MOVE:
+                Log.d("asdasd", "Movw");
+            case MotionEvent.ACTION_UP:
 
-        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                x = (int) event.getX();
-                y = (int) event.getY();
+                positionX = event.getX();
+                positionY = event.getY();
                 invalidate();
 
         }
+        * */
 
-        return super.onTouchEvent(event);
+        int action = event.getAction();
+
+        if (action == MotionEvent.ACTION_DOWN){
+            positionX = event.getX();
+            positionY = event.getY();
+        }else if (action == MotionEvent.ACTION_MOVE){
+            positionX = event.getX();
+            positionY = event.getY();
+        }else if (action == MotionEvent.ACTION_UP){
+            positionX = event.getX();
+            positionY = event.getY();
+        }
+            invalidate();
+        return true;
     }
 }

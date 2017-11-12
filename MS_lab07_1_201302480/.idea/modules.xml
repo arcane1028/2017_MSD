@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MS_lab07_1_201302480.iml" filepath="$PROJECT_DIR$/MS_lab07_1_201302480.iml" />
+      <module fileurl="file://C:\Users\JSH\Desktop\Git\MSD\MS_lab07_1_201302480\MS_lab07_1_201302480.iml" filepath="C:\Users\JSH\Desktop\Git\MSD\MS_lab07_1_201302480\MS_lab07_1_201302480.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\JSH\Desktop\Git\MSD\MS_lab07_1_201302480\app\app.iml" filepath="C:\Users\JSH\Desktop\Git\MSD\MS_lab07_1_201302480\app\app.iml" />
     </modules>
   </component>
 </project>
