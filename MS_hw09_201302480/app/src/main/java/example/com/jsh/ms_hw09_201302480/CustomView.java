@@ -15,7 +15,6 @@ import android.view.View;
 public class CustomView extends View {
 
     private Paint paint;
-    private Canvas mCanvas;
     float x = 100, y = 100;
     float positionX = 100, positionY = 100;
 
@@ -29,26 +28,13 @@ public class CustomView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawRect(positionX - x / 2, positionY - y / 2, positionX + x / 2, positionY + y / 2, paint);
+        canvas.drawRect(positionX - x / 2, positionY - y / 2,
+                positionX + x / 2, positionY + y / 2, paint);
     }
 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-
-        /*
-        * switch (event.getAction()) {
-            case MotionEvent.ACTION_MOVE:
-                Log.d("asdasd", "Movw");
-            case MotionEvent.ACTION_UP:
-
-            case MotionEvent.ACTION_DOWN:
-                positionX = event.getX();
-                positionY = event.getY();
-                invalidate();
-
-        }
-        * */
 
         int action = event.getAction();
 
