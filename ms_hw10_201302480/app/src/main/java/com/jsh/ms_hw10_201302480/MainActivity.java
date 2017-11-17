@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     while (true) {
                         if (isRunning) {
                             handler.post(runnable);
-                            Thread.sleep(1000);
+                            Thread.sleep(2000);
                         } else {
                             Thread.sleep(500);
                         }
