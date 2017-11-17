@@ -53,12 +53,8 @@ public class CoverFlow extends Gallery
 
     private int getCenterOfView(View view)
     {
-        int[] location = new int[2];
-        view.getLocationOnScreen(location);
-
-
         Log.d("Test", view.getLeft() + " " + view.getWidth() / 2);
-        return location[0] + view.getWidth() / 2;
+        return view.getLeft() + view.getWidth() / 2;
     }
 
     @Override
@@ -86,6 +82,12 @@ public class CoverFlow extends Gallery
             transformImageBitmap((ImageView) child, t, rotationAngle);
         }
         return true;
+    }
+    private boolean isCenter(int childCenter){
+
+
+
+        return false;
     }
 
     private void transformImageBitmap(ImageView child, Transformation t, int rotationAngle)
