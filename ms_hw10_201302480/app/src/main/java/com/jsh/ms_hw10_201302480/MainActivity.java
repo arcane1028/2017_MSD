@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     while (true) {
                         if (isRunning) {
-                            Thread.sleep(1000);
                             handler.post(runnable);
+                            Thread.sleep(1000);
                         } else {
                             Thread.sleep(500);
                         }
