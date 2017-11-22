@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        panels = new ArrayList<>();
         listView = (ListView) findViewById(R.id.listView);
         start = (Button) findViewById(R.id.startButton);
         stop = (Button) findViewById(R.id.stopButton);
 
+        panels = new ArrayList<>();
         panels.add(new PannelItem("김준수", "010-1000-1000", "서울시", R.drawable.customer));
         panels.add(new PannelItem("이희선", "010-2000-2000", "부산시", R.drawable.customer));
         panels.add(new PannelItem("최민수", "010-3000-3000", "대전시", R.drawable.customer));
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
 
             adapter.removeItem(0);
-            if (index == 2) {
+            if (index == panels.size()-1) {
                 index = 0;
             } else {
                 index++;
