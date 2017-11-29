@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
                     connection.setConnectTimeout(10000);
                     connection.setRequestMethod("GET");
                     connection.setDoInput(true);
-                    connection.setDoOutput(true);
                     BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                     String line = null;
                     while(true)
